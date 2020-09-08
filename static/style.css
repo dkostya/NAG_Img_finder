@@ -1,0 +1,16 @@
+.searchform{
+    position: relative;
+    top: 30%;
+    width: 50%;
+    margin: auto;
+}
+.searchres{
+
+    margin: auto;
+    width: 60%;
+}
+
+.searchline{
+    width: 50%;
+    margin: 10px auto;
+}

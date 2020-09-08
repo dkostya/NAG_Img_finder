@@ -1,0 +1,64 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+  />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script defer src="/static/script.js"></script>
+</head>
+
+<div class="searchline">
+    <form action="{% url 'search_results' %}" method="get">
+      <input
+        id="search"
+        class="form-control"
+        required
+        name="q"
+        type="text"
+        placeholder="Ввести код, или наименование с учетом регистра"
+      />
+    </form>
+</div>
+
+<div class="searchres">
+  <h3 class="table">Результаты поиска</h3>
+  {% if object_list %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Код
+        </th>
+        <th>
+          Наименование
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in object_list %}
+      <tr>
+        <td>
+          <a href="/{{ item.id }}/">{{ item.sku }}</a>
+        </td>
+        <td>
+          <a href="/{{ item.id }}/">{{ item.title }}</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>Ничего не найдено</p>
+  {% endif %}
+</div>
+<style>
+  .searchres {
+    width: 80%;
+    margin: auto;
+  }
+</style>

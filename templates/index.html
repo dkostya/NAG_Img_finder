@@ -1,0 +1,29 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+  />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script defer src="/static/script.js"></script>
+</head>
+
+<body>
+  <div class="searchform">
+    <h4>Поиск оборудования в БД НАГ</h4>
+    <form action="{% url 'search_results' %}" method="get">
+      <input
+        id="search"
+        class="form-control"
+        required
+        name="q"
+        type="text"
+        placeholder="Ввести код, или наименование с учетом регистра"
+      />
+    </form>
+  </div>
+</body>
